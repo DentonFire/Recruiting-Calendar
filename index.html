@@ -246,8 +246,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
   </div>
 
   <div class="controls" aria-label="Page controls">
-    <span class="controls-label">Post copy</span>
-    <button class="toggle" id="togglePosts" type="button" aria-pressed="true">Showing ready-to-post copy</button>
+    <span class="controls-label">Social posts</span>
+    <button class="toggle" id="togglePosts" type="button" aria-pressed="true">Hide posts</button>
     <label class="visually-hidden" for="jumpTo" style="position:absolute;left:-9999px;">Jump to month</label>
     <select class="jump" id="jumpTo"><option value="">Jump to month&hellip;</option><option value="#jan">01 January: Civil Service Exam</option><option value="#feb">02 February: How to Become a Firefighter</option><option value="#mar">03 March: Fire Academy Expectations</option><option value="#apr">04 April: EMT School</option><option value="#may">05 May: Paramedic School</option><option value="#jun">06 June: A Day in the Life</option><option value="#jul">07 July: Surviving Your Rookie Year</option><option value="#aug">08 August: Flex Month: The Catch-Up Edition</option><option value="#sep">09 September: Exercise and Diet</option><option value="#oct">10 October: PAT Prep</option><option value="#nov">11 November: Registration Opens</option><option value="#dec">12 December: Interviews</option><option value="#flex">Flex Month Topic Bank</option><option value="#archive">Edition Archive</option></select>
   </div>
@@ -2477,7 +2477,7 @@ document.querySelectorAll('[data-link]').forEach(function(a) {
     var hidden = document.body.classList.toggle('hide-posts');
     btn.classList.toggle('off', hidden);
     btn.setAttribute('aria-pressed', String(!hidden));
-    btn.textContent = hidden ? 'Show ready-to-post copy' : 'Showing ready-to-post copy';
+    btn.textContent = hidden ? 'Show posts' : 'Hide posts';
   });
 })();
 
