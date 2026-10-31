@@ -332,6 +332,8 @@ HTML = f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ready to Serve: Recruiting Content Calendar | Denton Fire Department</title>
+<link rel="icon" type="image/png" href="https://files.constantcontact.com/3720c3fd901/10017eb4-f7d2-424d-92ed-c1b5424b9869.png">
+<link rel="apple-touch-icon" href="https://files.constantcontact.com/3720c3fd901/10017eb4-f7d2-424d-92ed-c1b5424b9869.png">
 <meta name="description" content="Denton Fire Department Ready to Serve recruiting content calendar. Twelve monthly themes aligned to the Civil Service hiring cycle, with weekly Facebook, LinkedIn, and X posts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
