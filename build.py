@@ -356,8 +356,8 @@ HTML = f'''<!DOCTYPE html>
   </div>
 
   <div class="controls" aria-label="Page controls">
-    <span class="controls-label">Post copy</span>
-    <button class="toggle" id="togglePosts" type="button" aria-pressed="true">Showing ready-to-post copy</button>
+    <span class="controls-label">Social posts</span>
+    <button class="toggle" id="togglePosts" type="button" aria-pressed="true">Hide posts</button>
     <label class="visually-hidden" for="jumpTo" style="position:absolute;left:-9999px;">Jump to month</label>
     <select class="jump" id="jumpTo"><option value="">Jump to month&hellip;</option>{jump_opts}<option value="#flex">Flex Month Topic Bank</option><option value="#archive">Edition Archive</option></select>
   </div>
@@ -499,7 +499,7 @@ document.querySelectorAll('[data-link]').forEach(function(a) {{
     var hidden = document.body.classList.toggle('hide-posts');
     btn.classList.toggle('off', hidden);
     btn.setAttribute('aria-pressed', String(!hidden));
-    btn.textContent = hidden ? 'Show ready-to-post copy' : 'Showing ready-to-post copy';
+    btn.textContent = hidden ? 'Show posts' : 'Hide posts';
   }});
 }})();
 
