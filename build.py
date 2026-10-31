@@ -103,7 +103,6 @@ body { font-family: 'Inter', Arial, sans-serif; background-color: var(--gray-100
 
 /* POSTS */
 .posts { margin-top: 14px; border-top: 1px dashed var(--gray-200); padding-top: 12px; display: flex; flex-direction: column; gap: 10px; }
-body.hide-posts .posts { display: none; }
 .post { display: grid; grid-template-columns: 74px 1fr auto; gap: 10px; align-items: start; }
 .post-tag { font-size: .65rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #fff; border-radius: 4px; padding: 4px 0; text-align: center; margin-top: 2px; }
 .post-tag.fb { background: var(--fb); } .post-tag.li { background: var(--li); } .post-tag.x { background: var(--x); }
@@ -177,10 +176,7 @@ body.hide-posts .posts { display: none; }
 .footer-text { font-size: .85rem; color: #9CA3AF; margin-bottom: 4px; }
 
 /* STICKY CONTROLS */
-.controls { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--gray-200); padding: 10px 32px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.controls-label { font-size: .72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); margin-right: auto; }
-.toggle { font-family: inherit; font-size: .72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 6px; border: 2px solid var(--navy); background: var(--navy); color: var(--yellow); cursor: pointer; }
-.toggle.off { background: #fff; color: var(--navy); }
+.controls { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--gray-200); padding: 10px 32px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
 .jump { font-family: inherit; font-size: .8rem; font-weight: 700; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--gray-200); color: var(--navy); background: #fff; }
 
 /* BACK TO TOP */
@@ -356,8 +352,6 @@ HTML = f'''<!DOCTYPE html>
   </div>
 
   <div class="controls" aria-label="Page controls">
-    <span class="controls-label">Social posts</span>
-    <button class="toggle" id="togglePosts" type="button" aria-pressed="true">Hide posts</button>
     <label class="visually-hidden" for="jumpTo" style="position:absolute;left:-9999px;">Jump to month</label>
     <select class="jump" id="jumpTo"><option value="">Jump to month&hellip;</option>{jump_opts}<option value="#flex">Flex Month Topic Bank</option><option value="#archive">Edition Archive</option></select>
   </div>
@@ -489,18 +483,6 @@ document.querySelectorAll('[data-link]').forEach(function(a) {{
   if (card) {{ card.classList.add('current'); card.setAttribute('aria-current', 'date'); }}
   var b = document.getElementById('monthBannerText');
   if (b) b.textContent = 'THIS MONTH \\u2022 ' + monthName.toUpperCase() + ' ' + now.getFullYear() + ' \\u2022 THEME: ' + themes[idx].toUpperCase();
-}})();
-
-// Toggle post copy visibility
-(function() {{
-  var btn = document.getElementById('togglePosts');
-  if (!btn) return;
-  btn.addEventListener('click', function() {{
-    var hidden = document.body.classList.toggle('hide-posts');
-    btn.classList.toggle('off', hidden);
-    btn.setAttribute('aria-pressed', String(!hidden));
-    btn.textContent = hidden ? 'Show posts' : 'Hide posts';
-  }});
 }})();
 
 // Jump to month
